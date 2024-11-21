@@ -1,8 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 main {
@@ -22,9 +27,44 @@ main {
 }
 
 .header {
-    background-color: gray;
-    color: white;
+    background-color: rgb(213, 213, 213);
+    color: rgb(64, 64, 64);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 0 50px;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Stack h1 and h3 vertically */
+    align-items: flex-start; /* Align to the left */
+    position: absolute; /* Position absolutely in the header */
+    left: 100px; /* Adjust this value for more left spacing */
+    top: 300px;
+    text-align: left; /* Align text to the left */
+}
+  
+.header-content h1 {
+    margin: 0;
+    font-size: 7rem;
+}
+  
+.header-content h3 {
+    margin: 10px 0 0 0; /* Space below h1 */
     font-size: 2rem;
+}
+
+.header-image {
+    width: 400px; /* Set a fixed width for the image */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+    right: 100px;
+    top: 200px;
 }
 
 .about {
@@ -33,14 +73,21 @@ main {
     font-size: 1.5rem;
 }
 
-nav {
-    margin-top: 1rem;
+.header nav {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
   
-nav a {
-    color: #fff;
+.header nav a {
+    color: rgb(64, 64, 64);
     margin-left: 0 1rem;
     text-decoration: none;
+    margin-left: 20px;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
 }
 
 .projects {
@@ -69,3 +116,38 @@ form button {
     border: none;
 }
   
+
+@media (max-width: 768px) {
+    .header {
+      padding: 0 20px; /* Reduce padding on smaller screens */
+    }
+  
+    .header-content {
+      left: 20px; /* Adjust left spacing for smaller screens */
+      text-align: left; /* Keep text left-aligned */
+    }
+  
+    .header-content h1 {
+      font-size: 4rem; /* Reduce h1 size on smaller screens */
+    }
+  
+    .header-content h3 {
+      font-size: 2rem; /* Reduce h3 size on smaller screens */
+    }
+
+    .header-image {
+        width: 100%; /* Make the image take full width on small screens */
+        height: 200px;
+        width: 200px;
+      }
+  
+    .header nav {
+      top: 10px;
+      right: 10px;
+      font-size: 1rem; /* Adjust font size of links on small screens */
+    }
+  
+    .header nav a {
+      margin-left: 15px; /* Reduce margin between nav items */
+    }
+  }
