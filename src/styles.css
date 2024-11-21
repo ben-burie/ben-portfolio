@@ -39,6 +39,12 @@ main {
     padding-left: 0 50px;
 }
 
+.ext-links {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
 .header-content {
     display: flex;
     flex-direction: column; /* Stack h1 and h3 vertically */
@@ -114,6 +120,23 @@ form button {
     background: #333;
     color: #fff;
     border: none;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    pointer-events: none; /* Prevent the tooltip from interfering with cursor events */
+    z-index: 1000; /* Ensure it appears on top */
+    white-space: nowrap; /* Prevent wrapping of text */
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0; /* Hidden by default */
+}
+.tooltip[style*="display: block"] {
+    opacity: 1; /* Show tooltip when display is block */
 }
   
 
