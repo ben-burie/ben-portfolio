@@ -50,7 +50,7 @@ const Header = () => {
   return (
     <section id="header" className="section header">
       <div className="ext-links">
-        <a href="https://drive.google.com/file/d/1SQGHt0ZOHgTVnwO0yE3Uuha7zYWk_FrG/view?usp=sharing" target="_blank" id="resume-link">Resume/CV</a>
+        <a href="https://drive.google.com/file/d/1SQGHt0ZOHgTVnwO0yE3Uuha7zYWk_FrG/view?usp=sharing" target="_blank" rel="noopener noreferrer" id="resume-link">Resume/CV</a>
         <a href="#" 
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
@@ -70,6 +70,34 @@ const Header = () => {
         <h3>Aspiring Software Engineer</h3>
       </div>
       <img src="images\profile-circle.png" alt="profile" className="header-image"></img>
+      <div className="down-arrow">
+        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
+          <svg
+            className="hover-svg"
+            width="64px"
+            height="64px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#404040"
+          >
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              stroke="#CCCCCC"
+              strokeWidth="0.43200000000000005"
+            ></g>
+            <g id="SVGRepo_iconCarrier">
+              <path
+                d="M6.34292 7.75734L4.92871 9.17155L11.9998 16.2426L19.0708 9.17158L17.6566 7.75737L11.9998 13.4142L6.34292 7.75734Z"
+                fill="#404040"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </div>
     </section>
   );
 };

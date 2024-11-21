@@ -118,6 +118,24 @@ main {
     text-decoration: underline;
 }
 
+.down-arrow {
+    position:absolute;
+    bottom: 10px;
+}
+
+.hover-svg {
+    transition: transform 0.3s ease, fill 0.3s ease;
+    cursor: pointer; /* Optional */
+}
+  
+.hover-svg:hover {
+    transform: scale(1.5); /* Increase size */
+}
+  
+.hover-svg:hover path {
+    fill:rgb(133, 89, 161); /* Change color */
+}
+
 .projects {
     background-color: orange;
     color: white;
