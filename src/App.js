@@ -6,14 +6,12 @@ import Contact from './components/Contact';
 import './styles.css'
 
 const App = () => (
-  <div>
-    <Header />
     <main>
+      <Header />
       <About />
       <Projects />
       <Contact />
     </main>
-  </div>
 );
 
 export default App;

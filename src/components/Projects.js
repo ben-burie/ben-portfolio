@@ -6,7 +6,7 @@ const projects = [
 ];
 
 const Projects = () => (
-  <section id="projects">
+  <section id="projects" className="section projects">
     <h2>Projects</h2>
     <div>
       {projects.map((project, index) => (
