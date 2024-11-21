@@ -5,13 +5,16 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import './styles.css'
 
-const App = () => (
+const App = () => {
+
+  return (
     <main>
       <Header />
       <About />
       <Projects />
       <Contact />
     </main>
-);
+  );
+};
 
 export default App;
