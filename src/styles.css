@@ -61,7 +61,7 @@ main {
 }
 
 #resume-link:hover {
-    background-color: rgb(64, 64, 64);
+    background-color: rgb(133, 89, 161);
     color:rgb(213, 213, 213);
     transition: background-color, 0.2s;
 }
@@ -84,6 +84,7 @@ main {
 .header-content h3 {
     margin: 10px 0 0 0; /* Space below h1 */
     font-size: 2rem;
+    color:rgb(133, 89, 161);
 }
 
 .header-image {
