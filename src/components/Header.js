@@ -50,12 +50,12 @@ const Header = () => {
   return (
     <section id="header" className="section header">
       <div className="ext-links">
+        <a href="https://drive.google.com/file/d/1SQGHt0ZOHgTVnwO0yE3Uuha7zYWk_FrG/view?usp=sharing" target="_blank" id="resume-link">Resume/CV</a>
         <a href="#" 
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}>example@gmail.com</a>
-        <button></button>
         <div className="tooltip" style={tooltipStyle}>
           {tooltipText}
         </div>
