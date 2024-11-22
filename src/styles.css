@@ -96,9 +96,42 @@ main {
 }
 
 .about {
-    background-color: purple;
-    color: white;
-    font-size: 1.5rem;
+    background-color:rgb(213, 213, 213);
+}
+
+.section.about {
+    position: relative;
+}
+
+.about-header {
+    position: absolute; /* Positions the entire header block absolutely */
+    top: 100px; /* Distance from the top of the section */
+    left: 100px; /* Distance from the left of the section */
+}
+
+.about-header h2 {
+    font-size: 6rem;
+    color:rgb(64, 64, 64);
+    position: absolute;
+    margin: 0;
+    width: 100px;
+}
+
+.about-header h3 {
+    font-size: 2rem;
+    color:rgb(64, 64, 64);
+    margin-top: 150px;
+    text-align: left;
+    max-width: 600px;
+}
+
+.about-header h3 span {
+    color:rgb(133, 89, 161);
+}
+
+.about-header ul h3{
+    font-size: 2rem;
+    margin-top: -10px;
 }
 
 .header nav {
@@ -197,6 +230,11 @@ form button {
   
     .header-content h3 {
       font-size: 2rem; /* Reduce h3 size on smaller screens */
+    }
+
+    .about-header {
+        left: 20px;
+        top: 20px;
     }
 
     .header-image {
