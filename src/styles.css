@@ -104,9 +104,9 @@ main {
 }
 
 .about-header {
-    position: absolute; /* Positions the entire header block absolutely */
-    top: 100px; /* Distance from the top of the section */
-    left: 100px; /* Distance from the left of the section */
+    align-self: start; /* Align to the top of the column */
+    justify-self: start; /* Align to the left of the column */
+    padding: 50px;
 }
 
 .about-header h2 {
@@ -127,6 +127,7 @@ main {
 
 .about-header h3 span {
     color:rgb(133, 89, 161);
+    padding: 20px;
 }
 
 .about-header ul h3{
@@ -156,6 +157,11 @@ main {
     bottom: 10px;
 }
 
+.down-arrow-about {
+    display: grid;
+    place-items: center; /* Center both vertically and horizontally */
+}
+
 .hover-svg {
     transition: transform 0.3s ease, fill 0.3s ease;
     cursor: pointer; /* Optional */
@@ -180,6 +186,29 @@ main {
     color: white;
     font-size: 1.5rem;
 }
+
+.section.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    grid-template-rows: 1fr; /* Single row for the section as a whole */
+    height: 100vh; /* Full viewport height */
+    padding: 20px;
+    gap: 20px; /* Space between columns */
+}
+
+.about-content {
+    display: grid;
+    grid-template-rows: auto; /* Three rows of equal height */
+}
+
+.about-content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px; /* Optional rounded corners */
+    padding: 5px;
+    text-align: center;
+}
   
 form input, form textarea {
     display: block;
@@ -193,6 +222,24 @@ form button {
     background: #333;
     color: #fff;
     border: none;
+}
+
+.about-content .student, 
+.about-content .skills, 
+.about-content .involvement {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:rgb(64, 64, 64);
+}
+
+.about-content .student h2, 
+.about-content .skills h2, 
+.about-content .involvement h2 {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color:rgb(133, 89, 161);
 }
 
 .tooltip {
@@ -241,6 +288,7 @@ form button {
         width: 100%; /* Make the image take full width on small screens */
         height: 200px;
         width: 200px;
+        display: none;
       }
   
     .header nav {
@@ -252,4 +300,75 @@ form button {
     .header nav a {
       margin-left: 15px; /* Reduce margin between nav items */
     }
-  }
+
+    .section.about {
+        grid-template-columns: 1fr; /* Switch to one column */
+        grid-template-rows: auto auto; /* Adjust rows automatically */
+    }
+
+    .about-header {
+        justify-self: center; /* Center the header */
+        text-align: center; /* Center the text */
+        padding: 10px;
+    }
+
+    .about-content {
+        grid-template-rows: auto; /* Let rows expand naturally */
+        gap: 5px;
+        font-size: 0.1rem;
+        margin-top: -100px;
+    }
+
+    .about-content > div {
+        padding: 0px; /* Reduce padding for smaller screens */
+    }
+
+    h2, h3 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .about-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-header h3 {
+        margin-top: 70px;
+    }
+
+    .about-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .about-header ul {
+        display: none;
+    }
+}
+
+/* Responsive Design for Very Small Screens (Mobile) */
+@media (max-width: 480px) {
+    .section.about {
+        padding: 10px;
+    }
+
+    .about-header {
+        padding: 5px;
+        font-size: 0.1rem;
+    }
+
+    .about-content > div {
+        padding: 5px; /* Minimal padding for very small screens */
+    }
+
+    h2 {
+        font-size: 0.2rem;
+    }
+
+    h3 {
+        font-size: 0.1rem;
+    }
+
+    .about-header h2 {
+        font-size: 0.5rem;
+    }
+
+}

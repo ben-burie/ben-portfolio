@@ -51,7 +51,7 @@ const Header = () => {
     <section id="header" className="section header">
       <div className="ext-links">
         <a href="https://drive.google.com/file/d/1SQGHt0ZOHgTVnwO0yE3Uuha7zYWk_FrG/view?usp=sharing" target="_blank" rel="noopener noreferrer" id="resume-link">Resume/CV</a>
-        <a href="#" 
+        <a href="#header" 
         onMouseEnter={handleMouseEnter}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
