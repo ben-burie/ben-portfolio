@@ -19,34 +19,16 @@ const About = () => {
         <h3>I am a<span>computer science</span>student with a<span>passion</span>for 
         <span>learning</span>both inside and outside of the classroom.</h3>
         <ul>
-            <li><h3>Software<span>Development</span></h3></li>
-            <li><h3>Web<span>Development</span></h3></li>
-            <li><h3>Data<span>Science</span></h3></li>
-            <li><h3>Machine<span>Learning</span></h3></li>
+            <li><h3>B.S in Computer Science</h3></li>
+            <li><h3>Minor in Data Science</h3></li>
+            <li><h3>UWW Association for Computer Machinery (ACM)</h3></li>
+            <li><h3>UWW Running Club - Risk Management Officer</h3></li>
         </ul>
     </div>
     <div className="about-content">
-        <div className="student">
-            <h2>Student</h2>
-            <p>B.S in Computer Science</p>
-            <p>Minor in Data Science</p>
-        </div>
-        <div className="skills">
-            <h2>Skills</h2>
-            <p>Java</p>
-            <p>Python</p>
-            <p>JavaScript</p>
-            <p>HTML/CSS</p>
-            <p>GitHub</p>
-            <p>Visual Studio</p>
-        </div>
-        <div className="involvement">
-            <h2>Involvement</h2>
-            <p>ACM - UWW Chapter Member</p>
-            <p>UWW Running Club Officer</p>
-        </div>
+        <img src="\images\coding-html-svgrepo-com.svg" alt="computer" style={{ width: '300px', height: 'auto' }} ></img>
     </div>
-    <div className="down-arrow-about">
+    <div className="down-arrow">
         <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
           <svg
             className="hover-svg"

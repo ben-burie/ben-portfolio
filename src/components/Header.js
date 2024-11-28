@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 const Header = () => {
 
   const [tooltipStyle, setTooltipStyle] = useState({ display: 'none', left: 0, top: 0 });
-  const [tooltipText, setTooltipText] = useState('Copy to Clipboard');
+  const [tooltipText, setTooltipText] = useState('');
 
-  const handleMouseEnter = (e) => {
+  const handleMouseEnter = (e, text) => {
+    setTooltipText(text);
     setTooltipStyle({
       display: 'block',
       left: e.pageX + 10, // Offset the tooltip slightly from the cursor
@@ -52,17 +53,15 @@ const Header = () => {
       <div className="ext-links">
         <a href="https://drive.google.com/file/d/1SQGHt0ZOHgTVnwO0yE3Uuha7zYWk_FrG/view?usp=sharing" target="_blank" rel="noopener noreferrer" id="resume-link">Resume/CV</a>
         <a href="#header" 
-        onMouseEnter={handleMouseEnter}
+        onMouseEnter={(e) => handleMouseEnter(e, 'Copy to Clipboard')}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         onClick={handleClick}>example@gmail.com</a>
-        <div className="tooltip" style={tooltipStyle}>
-          {tooltipText}
-        </div>
       </div>
       <nav>
         <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a>
         <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a>
+        <a href="#skills" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a>
         <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a>
       </nav>
       <div className="header-content">
@@ -71,7 +70,10 @@ const Header = () => {
       </div>
       <img src="images\profile-circle.png" alt="profile" className="header-image"></img>
       <div className="down-arrow">
-        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>
+        <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
+        onMouseEnter={(e) => handleMouseEnter(e, 'Scroll Down')}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}>
           <svg
             className="hover-svg"
             width="64px"
@@ -97,6 +99,9 @@ const Header = () => {
             </g>
           </svg>
         </a>
+      </div>
+      <div className="tooltip" style={tooltipStyle}>
+          {tooltipText}
       </div>
     </section>
   );

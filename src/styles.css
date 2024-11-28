@@ -56,7 +56,7 @@ main {
     border-style: solid;
     padding: 8px;
     border-radius: 10px;
-    color:rgb(64, 64, 64);
+    color:#404040;
     transition: background-color, 0.2s;
 }
 
@@ -153,13 +153,14 @@ main {
 }
 
 .down-arrow {
+    /*
     position:absolute;
     bottom: 10px;
-}
-
-.down-arrow-about {
-    display: grid;
-    place-items: center; /* Center both vertically and horizontally */
+    */
+    position: absolute;         /* Position relative to the `about` section */
+    bottom: 20px;               /* Place it 20px above the bottom of the section */
+    left: 50%;                  /* Center horizontally within the section */
+    transform: translateX(-50%); /* Adjust for element width to center perfectly */
 }
 
 .hover-svg {
@@ -172,7 +173,7 @@ main {
 }
   
 .hover-svg:hover path {
-    fill:rgb(133, 89, 161); /* Change color */
+    fill:#8559a1; /* Change color */
 }
 
 .projects {
@@ -199,6 +200,7 @@ main {
 .about-content {
     display: grid;
     grid-template-rows: auto; /* Three rows of equal height */
+    place-items: center; /* Centers both horizontally and vertically */
 }
 
 .about-content > div {
@@ -222,24 +224,6 @@ form button {
     background: #333;
     color: #fff;
     border: none;
-}
-
-.about-content .student, 
-.about-content .skills, 
-.about-content .involvement {
-    display: block;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color:rgb(64, 64, 64);
-}
-
-.about-content .student h2, 
-.about-content .skills h2, 
-.about-content .involvement h2 {
-    display: block;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color:rgb(133, 89, 161);
 }
 
 .tooltip {
@@ -314,9 +298,7 @@ form button {
 
     .about-content {
         grid-template-rows: auto; /* Let rows expand naturally */
-        gap: 5px;
-        font-size: 0.1rem;
-        margin-top: -100px;
+        margin-top:-300px;
     }
 
     .about-content > div {
