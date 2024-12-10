@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const About = () => {
+
+  const [tooltipStyle, setTooltipStyle] = useState({ display: 'none', left: 0, top: 0 });
+  const [tooltipText, setTooltipText] = useState('');
 
     const scrollToSection = (id) => {
         const section = document.getElementById(id);
@@ -10,6 +13,28 @@ const About = () => {
             block: 'start',     // Align the top of the section with the viewport
           });
         }
+    };
+
+    const handleMouseEnter = (e, text) => {
+      setTooltipText(text);
+      setTooltipStyle({
+        display: 'block',
+        left: e.pageX + 10, // Offset the tooltip slightly from the cursor
+        top: e.pageY + 10,
+      });
+    };
+  
+    const handleMouseMove = (e) => {
+      setTooltipStyle({
+        display: 'block',
+        left: e.pageX + 10,
+        top: e.pageY + 10,
+      });
+    };
+  
+    const handleMouseLeave = () => {
+      setTooltipStyle({ display: 'none' });
+      setTooltipText('Copy to Clipboard');
     };
 
     return (
@@ -29,7 +54,10 @@ const About = () => {
         <img src="\images\coding-html-svgrepo-com.svg" alt="computer" style={{ width: '300px', height: 'auto' }} ></img>
     </div>
     <div className="down-arrow">
-        <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>
+        <a href="#projects" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}
+          onMouseEnter={(e) => handleMouseEnter(e, 'Scroll Down')}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}>
           <svg
             className="hover-svg"
             width="64px"
@@ -55,6 +83,9 @@ const About = () => {
             </g>
           </svg>
         </a>
+      </div>
+      <div className="tooltip" style={tooltipStyle}>
+          {tooltipText}
       </div>
   </section>
 );

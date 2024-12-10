@@ -176,11 +176,63 @@ main {
     fill:#8559a1; /* Change color */
 }
 
-.projects {
-    background-color: orange;
-    color: white;
-    font-size: 1.5rem;
-}
+.section.projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    background-color:rgb(213, 213, 213);
+    color:rgb(64, 64, 64);
+  }
+  
+  .section.projects h2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+    padding: 50px;
+    font-size: 4rem;
+  }
+  
+  .projects-container {
+    display: flex;
+    gap: 20px; /* Space between projects */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: center;
+  }
+  
+  .project {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 400px; /* Adjust width as needed */
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project h3 {
+    margin: 0 0 10px 0;
+    font-size: 3rem;
+  }
+  
+  .project h4 {
+    margin: 0 0 15px 0;
+  }
+  
+  .project a {
+    text-decoration: none;
+    color:rgb(133, 89, 161);
+    font-weight: normal;
+    transition: font-weight 0.1s;
+  }
+
+  .project a:hover {
+    font-weight: bold;
+    transition: font-weight 0.1s;
+  }
+
 
 .contact {
     background-color: purple;
@@ -229,7 +281,7 @@ form button {
 .tooltip {
     position: absolute;
     color:rgb(64, 64, 64);
-    padding: 8px 12px;
+    padding: 8px 12px !important;
     border-radius: 4px;
     border:rgb(64, 64, 64);
     border-style: solid;
@@ -239,6 +291,7 @@ form button {
     white-space: nowrap; /* Prevent wrapping of text */
     transition: opacity 0.2s ease-in-out;
     opacity: 0; /* Hidden by default */
+    font-weight: bold;
 }
 .tooltip[style*="display: block"] {
     opacity: 1; /* Show tooltip when display is block */
