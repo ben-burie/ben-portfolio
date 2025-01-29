@@ -193,7 +193,7 @@ main {
     left: 10px;
     margin: 0;
     padding: 50px;
-    font-size: 4rem;
+    font-size: 5rem;
   }
   
   .projects-container {
@@ -241,10 +241,19 @@ main {
 
 
 .contact {
-    background-color: purple;
+    background-color:rgb(213, 213, 213);
     color: white;
-    font-size: 1.5rem;
-}
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    align-items: center; /* Centers content */
+    color:rgb(64, 64, 64);
+  }
+  
+  .contact-form {
+    width: 100%;
+    max-width: 400px; /* Adjust form width if needed */
+  }
 
 .section.about {
     display: grid;
@@ -269,19 +278,44 @@ main {
     padding: 5px;
     text-align: center;
 }
+
+.skills {
+    background-color:rgb(213, 213, 213);
+}
   
 form input, form textarea {
     display: block;
     width: 100%;
     margin-bottom: 1rem;
     padding: 0.5rem;
+    background-color:rgb(213, 213, 213);
+    border: 2px solid rgb(64, 64, 64);
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: rgb(133, 89, 161);
+}
+
+form textarea {
+    height: 300px;
 }
   
 form button {
     padding: 0.5rem 1rem;
-    background: #333;
-    color: #fff;
-    border: none;
+    background:rgb(213, 213, 213);
+    color: rgb(133, 89, 161);
+    border: 2px solid rgb(64, 64, 64);
+    border-radius: 2px;
+    width: 100px;
+    height: 50px;
+    font-weight: bold;
+    transition: width 0.5s ease-in;
+}
+
+form button:hover {
+    width: 100%;
+    transition: width 0.5s ease-in;
+    cursor: pointer;
 }
 
 .tooltip {
@@ -326,6 +360,16 @@ form button {
         left: 20px;
         top: 20px;
     }
+
+    .project {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        width: 200px; /* Adjust width as needed */
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+      }
 
     .header-image {
         width: 100%; /* Make the image take full width on small screens */
